@@ -18,3 +18,11 @@ test('contains Balls and Strikes display', () => {
   container.getByText(/strikes/i);
   // Assertion is if ^^^ is truthy
 });
+
+test('contains foul button', () => {
+  // Arrange
+  const container = render(<App />);
+  // Act - getting the node by text
+  container.getByTestId(/foul/i);
+  // Assertion is if ^^^ is truthy
+});

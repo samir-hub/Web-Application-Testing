@@ -1,27 +1,15 @@
 import React from 'react';
+import './Display.css';
 
 function Display(props) {
-    //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
-
   
     return (
       <div className="container">
-        <section className="scoreboard">
-          <div className="topRow">
-            <div className="home">
-              <h2 className="home__name">Balls</h2>
-  
-              {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
-  
-              <div className="home__score">{props.balls}</div>
-            </div>
-  
-            <div className="away">
-              <h2 className="away__name">Strikes</h2>
-              <div className="away__score">{props.strikes}</div>
-            </div>
-          </div>
-       
+        <section className="display">
+            <h2 className="balls_text">Balls</h2>
+            <div className="balls_props">{props.balls}</div>
+            <h2 className="strikes_text">Strikes</h2>
+            <div className="strikes_props">{props.strikes}</div>
         </section>
 
       </div>

@@ -21,7 +21,6 @@ export const addStrike = currentStrikes => {
   };
 
 function Dashboard(props) {
-    //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
     const [balls, setBalls] = useState(0);
     const [strikes, setStrikes] = useState(0);
   
@@ -55,15 +54,14 @@ function Dashboard(props) {
     return (
       <div className="container">
       <Display strikes={strikes} balls={balls}/>
-        <section className="buttons">
-          <div className="homeButtons">
-            {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
-            <button onClick={() => setStrikes(addStrike(strikes))} className="homeButtons__touchdown">Strike</button>
-            <button onClick={() => setBalls(addBall(balls))} className="homeButtons__fieldGoal">Ball</button>
+        <section>
+          <div>
+            <button onClick={() => setStrikes(addStrike(strikes))}>Strike</button>
+            <button onClick={() => setBalls(addBall(balls))}>Ball</button>
           </div>
-          <div className="awayButtons">
-            <button onClick={() => setStrikes(addFoul(strikes))} className="awayButtons__touchdown">Foul</button>
-            <button onClick={function someFunc() {setStrikes(0);setBalls(0);}}  className="awayButtons__fieldGoal">Hit</button>
+          <div>
+            <button onClick={() => setStrikes(addFoul(strikes))} data-testid="foul">Foul</button>
+            <button onClick={function someFunc() {setStrikes(0);setBalls(0);}}>Hit</button>
           </div>
         </section>
       </div>
